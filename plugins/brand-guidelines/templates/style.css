@@ -1,0 +1,64 @@
+/* TechTown CSS Variables — copier dans ton projet */
+:root {
+  /* Colors */
+  --color-primary: #1C62ED;
+  --color-primary-dark: #1557D6;
+  --color-accent: #3B7EFF;
+  --color-background: #FFFFFF;
+  --color-background-alt: #F9FAFB;
+  --color-background-alt-black: #1F2937;
+  --color-text: #1F2937;
+  --color-text-light: #6B7280;
+  --color-text-white: #FFFFFF;
+  --color-neutral: #6B7280;
+  --color-border: #E5E7EB;
+
+  /* Gradients */
+  --color-gradient-light-start: #F8FAFC;
+  --color-gradient-light-end: #E2E8F0;
+
+  /* Typography */
+  --font-family: "Poppins", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Texture */
+  --texture-noise-light: url(/noise-light.png);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0F172A;
+    --color-background-alt: #1E293B;
+    --color-text: #F1F5F9;
+    --color-text-light: #94A3B8;
+    --color-border: #334155;
+    --color-primary: #3B7EFF;
+  }
+}

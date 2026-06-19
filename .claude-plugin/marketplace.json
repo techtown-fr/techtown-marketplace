@@ -4,5 +4,14 @@
     "name": "TechTown",
     "email": "team@techtown.fr"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "brand-guidelines",
+      "source": "./plugins/brand-guidelines",
+      "description": "TechTown brand and design system guidelines. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, or implementing visual design for TechTown projects.",
+      "version": "1.0.0",
+      "keywords": ["brand", "design", "colors", "typography", "astro", "vue", "css", "techtown", "slidev", "dark-mode"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    }
+  ]
 }
