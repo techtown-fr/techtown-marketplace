@@ -1,0 +1,38 @@
+# <PROJECT_NAME>
+
+<PROJECT_DESCRIPTION>
+
+## Prérequis
+
+- Node.js 22+ (ou <RUNTIME>)
+- <OTHER_PREREQS>
+
+## Installation
+
+```bash
+git clone https://github.com/techtown-fr/<REPO_NAME>
+cd <REPO_NAME>
+npm install
+```
+
+## Développement
+
+```bash
+<DEV_COMMAND>
+```
+
+## Build & Deploy
+
+```bash
+<BUILD_COMMAND>
+```
+
+Déploiement automatique via GitHub Actions sur push sur `main`.
+
+## Architecture
+
+<BRIEF_ARCHITECTURE>
+
+## Licence
+
+Propriétaire — TechTown © 2026

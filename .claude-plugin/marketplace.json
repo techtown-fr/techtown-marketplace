@@ -28,6 +28,14 @@
       "version": "1.0.0",
       "keywords": ["terraform", "gcp", "cloud-run", "cloud-sql", "secret-manager", "iac", "europe-west", "techtown"],
       "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    },
+    {
+      "name": "project-setup",
+      "source": "./plugins/project-setup",
+      "description": "Initialize a new TechTown project with CLAUDE.md, README, .gitignore, pre-commit hooks, and GitHub Actions CI skeleton. Use when starting a new TechTown repo, setting up project conventions, or initializing a repo.",
+      "version": "1.0.0",
+      "keywords": ["setup", "init", "conventions", "claude-md", "pre-commit", "github-actions", "techtown", "scaffold"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
     }
   ]
 }
