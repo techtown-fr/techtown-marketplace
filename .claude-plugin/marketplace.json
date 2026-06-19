@@ -10,48 +10,142 @@
       "source": "./plugins/brand-guidelines",
       "description": "TechTown brand and design system guidelines. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, or implementing visual design for TechTown projects.",
       "version": "1.0.0",
-      "keywords": ["brand", "design", "colors", "typography", "astro", "vue", "css", "techtown", "slidev", "dark-mode"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "brand",
+        "design",
+        "colors",
+        "typography",
+        "astro",
+        "vue",
+        "css",
+        "techtown",
+        "slidev",
+        "dark-mode"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     },
     {
       "name": "firebase-deploy",
       "source": "./plugins/firebase-deploy",
       "description": "Setup Firebase Hosting with WIF-based GitHub Actions CI/CD for TechTown projects. Use when deploying a web app to Firebase, setting up hosting CI/CD, or configuring GitHub Actions with Workload Identity Federation.",
       "version": "1.0.0",
-      "keywords": ["firebase", "hosting", "deploy", "github-actions", "wif", "ci-cd", "gcp", "techtown"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "firebase",
+        "hosting",
+        "deploy",
+        "github-actions",
+        "wif",
+        "ci-cd",
+        "gcp",
+        "techtown"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     },
     {
       "name": "gcp-terraform",
       "source": "./plugins/gcp-terraform",
       "description": "TechTown Terraform conventions for GCP: Cloud Run, Cloud SQL PostgreSQL, Secret Manager. Use when setting up GCP infrastructure, writing Terraform for Cloud Run or Cloud SQL, or following TechTown IaC conventions.",
       "version": "1.0.0",
-      "keywords": ["terraform", "gcp", "cloud-run", "cloud-sql", "secret-manager", "iac", "europe-west", "techtown"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "terraform",
+        "gcp",
+        "cloud-run",
+        "cloud-sql",
+        "secret-manager",
+        "iac",
+        "europe-west",
+        "techtown"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     },
     {
       "name": "project-setup",
       "source": "./plugins/project-setup",
       "description": "Initialize a new TechTown project with CLAUDE.md, README, .gitignore, pre-commit hooks, and GitHub Actions CI skeleton. Use when starting a new TechTown repo, setting up project conventions, or initializing a repo.",
       "version": "1.0.0",
-      "keywords": ["setup", "init", "conventions", "claude-md", "pre-commit", "github-actions", "techtown", "scaffold"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "setup",
+        "init",
+        "conventions",
+        "claude-md",
+        "pre-commit",
+        "github-actions",
+        "techtown",
+        "scaffold"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     },
     {
       "name": "reporting",
       "source": "./plugins/reporting",
       "description": "Generate TechTown-branded standalone HTML reports with Chart.js visualizations, dark/light mode, and Puppeteer PDF export. Use when creating client deliverables, audit reports, dashboards, or any TechTown-branded HTML report.",
       "version": "1.0.0",
-      "keywords": ["report", "html", "chart", "dashboard", "audit", "pdf", "techtown-brand", "deliverable", "puppeteer"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "report",
+        "html",
+        "chart",
+        "dashboard",
+        "audit",
+        "pdf",
+        "techtown-brand",
+        "deliverable",
+        "puppeteer"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     },
     {
       "name": "astro-firebase-app",
       "source": "./plugins/astro-firebase-app",
       "description": "Scaffold a TechTown Astro 5 app with Firebase Hosting and Google SSO restricted to @techtown.fr. Use when creating a new internal TechTown web application, nouvelle app Astro TechTown, scaffold application, Astro Firebase setup.",
       "version": "1.0.0",
-      "keywords": ["astro", "firebase", "google-sso", "techtown", "scaffold", "hosting", "auth", "astro5"],
-      "author": { "name": "TechTown", "email": "team@techtown.fr" }
+      "keywords": [
+        "astro",
+        "firebase",
+        "google-sso",
+        "techtown",
+        "scaffold",
+        "hosting",
+        "auth",
+        "astro5"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
+    },
+    {
+      "name": "techtown-guardrails",
+      "source": "./plugins/techtown-guardrails",
+      "description": "Garde-fous de sécurité TechTown : bloque l'écriture de fichiers de secrets (.env, service-account, credentials) et applique terraform fmt après édition d'un .tf. USE WHEN sécuriser un projet TechTown contre les fuites de secrets, hooks de garde-fou.",
+      "version": "1.0.0",
+      "keywords": [
+        "security",
+        "secrets",
+        "guardrails",
+        "hooks",
+        "terraform",
+        "env",
+        "techtown"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     }
   ]
 }

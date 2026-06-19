@@ -1,0 +1,8 @@
+{
+  "name": "techtown-guardrails",
+  "version": "1.0.0",
+  "description": "Garde-fous de sécurité TechTown : bloque l'écriture de fichiers de secrets (.env, service-account, credentials) et applique terraform fmt après édition d'un .tf. USE WHEN sécuriser un projet TechTown contre les fuites de secrets, hooks de garde-fou, PreToolUse/PostToolUse.",
+  "keywords": ["security", "secrets", "guardrails", "hooks", "terraform", "env", "techtown"],
+  "author": { "name": "TechTown", "email": "team@techtown.fr" },
+  "hooks": "./hooks/hooks.json"
+}
