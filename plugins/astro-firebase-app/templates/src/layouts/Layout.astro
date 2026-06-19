@@ -1,0 +1,191 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  requireAuth?: boolean;
+}
+
+const {
+  title = "Application — TechTown",
+  description = "Application interne TechTown",
+  requireAuth = true,
+} = Astro.props;
+
+const siteName = "TechTown";
+const siteUrl = Astro.url.href;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Désactiver l'indexation des apps internes -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme initialization (prevent FOUC) -->
+    <script is:inline>
+      (function () {
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body data-require-auth={requireAuth ? "true" : "false"}>
+    <slot />
+
+    <script>
+      import { onAuthStateChanged } from "firebase/auth";
+      import { auth } from "../lib/firebase";
+
+      const requireAuth = document.body.dataset.requireAuth === "true";
+
+      if (requireAuth) {
+        onAuthStateChanged(auth, (user) => {
+          if (user && user.email?.endsWith("@techtown.fr")) {
+            document.body.classList.add("auth-ready");
+          } else {
+            window.location.href = "/login";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-blue: #1c62ed;
+    --color-primary: #1c62ed;
+    --color-text-white: #ffffff;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #e0e0e0;
+    --color-gray-dark: #666666;
+
+    /* Semantic color tokens */
+    --color-bg: var(--color-white);
+    --color-bg-secondary: var(--color-gray-light);
+    --color-text: var(--color-black);
+    --color-text-muted: var(--color-gray-dark);
+    --color-border: var(--color-gray-medium);
+    --color-card-bg: var(--color-white);
+    --color-hover-bg: var(--color-gray-light);
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --border-radius: 8px;
+    --transition: all 0.2s ease;
+  }
+
+  /* Dark mode */
+  [data-theme="dark"] {
+    --color-bg: #0f0f0f;
+    --color-bg-secondary: #1a1a1a;
+    --color-text: #f5f5f5;
+    --color-text-muted: #a0a0a0;
+    --color-border: #2a2a2a;
+    --color-card-bg: #1a1a1a;
+    --color-hover-bg: #252525;
+    --color-gray-light: #1a1a1a;
+    --color-gray-medium: #2a2a2a;
+    --color-gray-dark: #a0a0a0;
+    --color-white: #0f0f0f;
+    --color-black: #f5f5f5;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  /* Auth guard: hide content until authenticated */
+  body[data-require-auth="true"]:not(.auth-ready) > :not(script) {
+    display: none !important;
+  }
+
+  body[data-require-auth="true"]:not(.auth-ready)::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 45vh auto;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

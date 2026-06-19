@@ -44,6 +44,14 @@
       "version": "1.0.0",
       "keywords": ["report", "html", "chart", "dashboard", "audit", "pdf", "techtown-brand", "deliverable", "puppeteer"],
       "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    },
+    {
+      "name": "astro-firebase-app",
+      "source": "./plugins/astro-firebase-app",
+      "description": "Scaffold a TechTown Astro 5 app with Firebase Hosting and Google SSO restricted to @techtown.fr. Use when creating a new internal TechTown web application, nouvelle app Astro TechTown, scaffold application, Astro Firebase setup.",
+      "version": "1.0.0",
+      "keywords": ["astro", "firebase", "google-sso", "techtown", "scaffold", "hosting", "auth", "astro5"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
     }
   ]
 }
