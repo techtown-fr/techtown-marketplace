@@ -1,0 +1,7 @@
+# Page générée au CI — jamais commitée (source de vérité = marketplace.json)
+dist/
+
+# Dépendances / artefacts
+node_modules/
+*.log
+.DS_Store

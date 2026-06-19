@@ -1,0 +1,50 @@
+name: Deploy Marketplace Page
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".claude-plugin/marketplace.json"
+      - "plugins/**"
+      - "scripts/build-site.ts"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+# Permissions requises par actions/deploy-pages (OIDC)
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Une seule exécution de déploiement à la fois ; on n'annule pas un déploiement en cours
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Générer la page
+        run: bun scripts/build-site.ts --out dist
+      - name: Configurer Pages
+        uses: actions/configure-pages@v5
+      - name: Uploader l'artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
