@@ -12,6 +12,14 @@
       "version": "1.0.0",
       "keywords": ["brand", "design", "colors", "typography", "astro", "vue", "css", "techtown", "slidev", "dark-mode"],
       "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    },
+    {
+      "name": "firebase-deploy",
+      "source": "./plugins/firebase-deploy",
+      "description": "Setup Firebase Hosting with WIF-based GitHub Actions CI/CD for TechTown projects. Use when deploying a web app to Firebase, setting up hosting CI/CD, or configuring GitHub Actions with Workload Identity Federation.",
+      "version": "1.0.0",
+      "keywords": ["firebase", "hosting", "deploy", "github-actions", "wif", "ci-cd", "gcp", "techtown"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
     }
   ]
 }
