@@ -2,6 +2,7 @@ resource "google_sql_database_instance" "main" {
   name             = "${var.app_name}-db"
   database_version = "POSTGRES_15"
   region           = var.region
+  labels           = local.common_labels
 
   settings {
     tier = "db-f1-micro"
