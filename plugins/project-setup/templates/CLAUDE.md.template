@@ -1,0 +1,53 @@
+# CLAUDE.md — <PROJECT_NAME>
+
+## Project Identity
+
+<PROJECT_DESCRIPTION>
+
+**Repo :** `techtown-fr/<REPO_NAME>` · **Live :** <PRODUCTION_URL>
+
+## Architecture
+
+<ARCHITECTURE_DESCRIPTION>
+
+```
+<REPO_NAME>/
+├── src/          # Code source principal
+├── tests/        # Tests
+└── docs/         # Documentation
+```
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| <LAYER> | <TECH> |
+
+## Commands
+
+```bash
+# Développement
+<DEV_COMMAND>
+
+# Build
+<BUILD_COMMAND>
+
+# Tests
+<TEST_COMMAND>
+
+# Deploy
+<DEPLOY_COMMAND>
+```
+
+## Conventions
+
+- Langue : français pour les commits, commentaires, docs
+- Commits : Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`)
+- Branches : `feat/<name>`, `fix/<name>` — max 3 jours, merge via PR
+- Pre-commit : markdownlint + gitleaks (exécutés automatiquement)
+
+## Règles
+
+- Ne jamais committer de secrets ou clés en clair
+- Mettre à jour ce fichier quand l'architecture change
+- Tester en local avant de pousser

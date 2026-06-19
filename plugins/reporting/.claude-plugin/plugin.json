@@ -1,0 +1,7 @@
+{
+  "name": "reporting",
+  "version": "1.0.0",
+  "description": "Generate TechTown-branded standalone HTML reports with Chart.js visualizations, dark/light mode, and Puppeteer PDF export. Use when creating client deliverables, audit reports, dashboards, or any TechTown-branded HTML report.",
+  "keywords": ["report", "html", "chart", "dashboard", "audit", "pdf", "techtown-brand", "deliverable", "puppeteer"],
+  "author": { "name": "TechTown", "email": "team@techtown.fr" }
+}

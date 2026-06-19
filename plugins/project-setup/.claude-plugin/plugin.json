@@ -1,0 +1,10 @@
+{
+  "name": "project-setup",
+  "version": "1.0.0",
+  "description": "Initialize a new TechTown project with CLAUDE.md, README, .gitignore, pre-commit hooks, and GitHub Actions CI skeleton. Use when starting a new TechTown repo, setting up project conventions, or initializing a repo.",
+  "keywords": ["setup", "init", "conventions", "claude-md", "pre-commit", "github-actions", "techtown", "scaffold"],
+  "author": {
+    "name": "TechTown",
+    "email": "team@techtown.fr"
+  }
+}

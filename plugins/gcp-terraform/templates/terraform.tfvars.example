@@ -1,0 +1,6 @@
+# Copier ce fichier en terraform.tfvars (git-ignoré) et remplir les valeurs
+app_name        = "mon-app"
+container_image = "europe-west1-docker.pkg.dev/<PROJECT_ID>/repo/app:latest"
+environment     = "production"
+project_id      = "<PROJECT_ID>"
+region          = "europe-west1"

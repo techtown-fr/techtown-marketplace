@@ -1,0 +1,10 @@
+{
+  "name": "brand-guidelines",
+  "version": "1.0.0",
+  "description": "TechTown brand and design system guidelines. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, or implementing visual design for TechTown projects.",
+  "keywords": ["brand", "design", "colors", "typography", "astro", "vue", "css", "techtown", "slidev", "dark-mode"],
+  "author": {
+    "name": "TechTown",
+    "email": "team@techtown.fr"
+  }
+}
