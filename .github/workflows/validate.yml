@@ -1,0 +1,36 @@
+name: Validate Marketplace
+
+on:
+  push:
+    branches: ["main", "feat/**"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate marketplace.json
+        run: jq . .claude-plugin/marketplace.json
+      - name: Validate all plugin.json files
+        run: |
+          for f in plugins/*/.claude-plugin/plugin.json; do
+            echo "Validating $f"
+            jq . "$f"
+          done
+      - name: Check sync between marketplace.json and plugin.json files
+        run: |
+          for plugin_dir in plugins/*/; do
+            name=$(basename "$plugin_dir")
+            plugin_json="$plugin_dir.claude-plugin/plugin.json"
+            if [ -f "$plugin_json" ]; then
+              plugin_name=$(jq -r '.name' "$plugin_json")
+              in_registry=$(jq --arg n "$plugin_name" '.plugins[] | select(.name == $n) | .name' .claude-plugin/marketplace.json)
+              if [ -z "$in_registry" ]; then
+                echo "ERROR: plugin '$plugin_name' absent du marketplace.json"
+                exit 1
+              fi
+              echo "✅ $plugin_name synchronisé"
+            fi
+          done
