@@ -18,11 +18,15 @@ Regroupe les plugins pour les workflows récurrents de l'équipe.
 
 > Prérequis : être connecté sous l'org TechTown dans Claude Code.
 
-```
-/add-plugin techtown-marketplace
+```bash
+# 1. Ajouter le marketplace (facultatif si déployé via managed settings)
+claude plugin marketplace add techtown-fr/techtown-marketplace
+
+# 2. Installer un plugin
+claude plugin install brand-guidelines@techtown-marketplace
 ```
 
-Sélectionne les plugins à activer dans le menu.
+Lister les plugins disponibles : `claude plugin list`.
 
 Voir [QUICKSTART.md](QUICKSTART.md) pour le guide complet.
 
