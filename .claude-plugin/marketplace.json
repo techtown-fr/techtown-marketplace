@@ -36,6 +36,14 @@
       "version": "1.0.0",
       "keywords": ["setup", "init", "conventions", "claude-md", "pre-commit", "github-actions", "techtown", "scaffold"],
       "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    },
+    {
+      "name": "reporting",
+      "source": "./plugins/reporting",
+      "description": "Generate TechTown-branded standalone HTML reports with Chart.js visualizations, dark/light mode, and Puppeteer PDF export. Use when creating client deliverables, audit reports, dashboards, or any TechTown-branded HTML report.",
+      "version": "1.0.0",
+      "keywords": ["report", "html", "chart", "dashboard", "audit", "pdf", "techtown-brand", "deliverable", "puppeteer"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
     }
   ]
 }
