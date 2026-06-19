@@ -91,7 +91,7 @@ function renderHtml(mkt: Marketplace): string {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TechTown Claude Code Marketplace</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231C62ED'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-size='62' font-family='sans-serif' font-weight='700' fill='white'%3ET%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 183 183'%3E%3Crect width='183' height='183' rx='32' fill='white'/%3E%3Cg transform='translate(33.25 0)'%3E%3Cpath d='M48.6 78.6H32.3V45.5c9 0 16.3-7.3 16.3-16.3V11.4h40.9v34.2h26.8v33.1H89.5v59.7c0 7.7 3.4 10.9 12.4 10.9h14.6v33.8H95.7c-27.8 0-47.1-11.4-47.1-45.2z' fill='%231d1d1b'/%3E%3Ccircle cx='16.8' cy='16.8' r='16.8' fill='%231c63ed'/%3E%3C/g%3E%3C/svg%3E" />
   <meta name="description" content="Catalogue des plugins Claude Code internes TechTown — ${mkt.plugins.length} plugins pour les workflows de l'équipe." />
   <meta property="og:title" content="TechTown Claude Code Marketplace" />
   <meta property="og:description" content="${mkt.plugins.length} plugins Claude Code pour les collaborateurs TechTown." />
@@ -125,6 +125,7 @@ function renderHtml(mkt: Marketplace): string {
         --color-text-light: #94A3B8;
         --color-border: #334155;
       }
+      .tt-fg { fill: #F1F5F9; }
     }
     * { box-sizing: border-box; }
     body {
@@ -136,6 +137,11 @@ function renderHtml(mkt: Marketplace): string {
       background: var(--color-bg);
     }
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    .topbar { background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+    .topbar .container { display: flex; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
+    .brand-logo { height: 30px; width: auto; display: block; }
+    .tt-fg { fill: #1d1d1b; }
+    .tt-dot { fill: #1c63ed; }
     header.hero {
       background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
       color: #fff;
@@ -209,6 +215,12 @@ function renderHtml(mkt: Marketplace): string {
   </style>
 </head>
 <body>
+  <nav class="topbar">
+    <div class="container">
+      <!-- Logo officiel TechTown (source publique techtown.fr) -->
+      <svg class="brand-logo" role="img" aria-label="TechTown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430.5 73.7"><path class="tt-fg" d="M19.1 31h-6.5V17.7c3.6 0 6.5-2.9 6.5-6.5V4h16.2v13.7h10.6V31H35.3v24c0 3.1 1.3 4.4 4.9 4.4H46V73h-8.3C26.7 73 19 68.4 19 54.8V31Zm59.2 42.7c-15.6 0-26.8-10.3-26.8-26.9s11-26.9 26.8-26.9 26.4 10.1 26.4 26 0 3.1-.3 4.7H67.7c.6 6.8 4.8 10 10.1 10s7.1-2.2 8.4-5.1h17.3c-2.6 10.2-12 18.1-25.1 18.1ZM67.8 41.8h20.3c0-5.7-4.6-9-10-9s-9.4 3.2-10.3 9m69-21.8c13.3 0 22.7 7.2 25.4 19.7h-17.3c-1.3-3.6-4-6-8.4-6s-9.8 4.5-9.8 13.2 4 13.2 9.8 13.2 7-2.2 8.4-6h17.3c-2.8 12.1-12.1 19.7-25.4 19.7s-26.6-10.3-26.6-26.9 11-26.9 26.6-26.9m31-16.3H184v24.1c3.2-4.5 9-7.6 16.3-7.6 12.1 0 20.1 8.2 20.1 22.3V73h-16.1V44.6c0-7.1-4-11-10.2-11s-10.2 3.9-10.2 11V73h-16.2V3.7ZM232.4 31h-6.5V17.7c3.6 0 6.5-2.9 6.5-6.5V4h16.2v13.7h10.6V31h-10.6v24c0 3.1 1.3 4.4 4.9 4.4h5.8V73H251c-11 0-18.7-4.6-18.7-18.2V31Zm59.8 42.7c-15.6 0-27.3-10.3-27.3-26.9s12.1-26.9 27.5-26.9 27.5 10.3 27.5 26.9-12.1 26.9-27.7 26.9m0-13.8c5.8 0 11.2-4.2 11.2-13s-5.3-13-11-13-11 4.1-11 13 4.9 13 10.8 13m119.9-37.7c-7.1 0-10.8 3.1-14 7.5l.5-2.4 1.4-6.5h-15.3L377.3 58l-9-37.2h-17.2l-8.9 37.3-7.5-37.3h-15.2L330.9 73h19.8l8.6-33.9 8.4 33.9h20.9c0-.1 6.2-25.3 6.2-25.3 2.2-5.5 5-8.4 10.3-8.4s10.2 3.9 10.2 11V73h15.2V44.5c0-14-6.2-22.3-18.4-22.3" /><ellipse class="tt-dot" cx="6.7" cy="6.8" rx="6.7" ry="6.8" /></svg>
+    </div>
+  </nav>
   <header class="hero">
     <div class="container">
       <h1>TechTown Claude Code Marketplace</h1>
