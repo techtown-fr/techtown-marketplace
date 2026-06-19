@@ -20,6 +20,14 @@
       "version": "1.0.0",
       "keywords": ["firebase", "hosting", "deploy", "github-actions", "wif", "ci-cd", "gcp", "techtown"],
       "author": { "name": "TechTown", "email": "team@techtown.fr" }
+    },
+    {
+      "name": "gcp-terraform",
+      "source": "./plugins/gcp-terraform",
+      "description": "TechTown Terraform conventions for GCP: Cloud Run, Cloud SQL PostgreSQL, Secret Manager. Use when setting up GCP infrastructure, writing Terraform for Cloud Run or Cloud SQL, or following TechTown IaC conventions.",
+      "version": "1.0.0",
+      "keywords": ["terraform", "gcp", "cloud-run", "cloud-sql", "secret-manager", "iac", "europe-west", "techtown"],
+      "author": { "name": "TechTown", "email": "team@techtown.fr" }
     }
   ]
 }

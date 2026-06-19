@@ -1,0 +1,7 @@
+{
+  "name": "gcp-terraform",
+  "version": "1.0.0",
+  "description": "TechTown Terraform conventions for GCP: Cloud Run, Cloud SQL PostgreSQL, Secret Manager. Use when setting up GCP infrastructure, writing Terraform for Cloud Run or Cloud SQL, or following TechTown IaC conventions.",
+  "keywords": ["terraform", "gcp", "cloud-run", "cloud-sql", "secret-manager", "iac", "europe-west", "techtown"],
+  "author": { "name": "TechTown", "email": "team@techtown.fr" }
+}
