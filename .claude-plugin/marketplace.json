@@ -146,6 +146,28 @@
         "name": "TechTown",
         "email": "team@techtown.fr"
       }
+    },
+    {
+      "name": "secret-audit",
+      "source": "./plugins/secret-audit",
+      "description": "Scan the local workstation for plaintext secrets across all shells, cloud CLIs, MCP configs, and dev tools. Generates a local redacted HTML report — values are NEVER displayed. USE WHEN audit secrets, scan secrets, secrets en clair, audit sécurité poste, find plaintext secrets, scanner les tokens.",
+      "version": "1.0.0",
+      "keywords": [
+        "security",
+        "secrets",
+        "audit",
+        "credentials",
+        "plaintext",
+        "gitleaks",
+        "workstation",
+        "shell",
+        "cloud",
+        "techtown"
+      ],
+      "author": {
+        "name": "TechTown",
+        "email": "team@techtown.fr"
+      }
     }
   ]
 }
