@@ -163,7 +163,7 @@ Ready-to-use component patterns following TechTown brand guidelines.
 
 .icon--sm { width: 60px; height: 60px; }
 .icon--md { width: 100px; height: 100px; }
-.icon--lg { width: 100px; height: 100px; }
+.icon--lg { width: 140px; height: 140px; }
 
 .icon-text {
   color: white;
