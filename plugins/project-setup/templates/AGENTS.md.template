@@ -20,16 +20,15 @@ Instructions for AI coding agents working in this repository.
 
 ## Commit conventions
 
-- Prefix every commit with the relevant [Gitmoji](https://gitmoji.dev/): `✨ feat:`, `🐛 fix:`,
-  `♻️ refactor:`, `📝 docs:`, `🔧 chore:`, `⬆️ chore:` for dependency bumps.
-- Conventional Commits style after the emoji, in English.
+- [Conventional Commits](https://www.conventionalcommits.org/) in English: `feat:`, `fix:`,
+  `refactor:`, `docs:`, `chore:`. No emoji prefix.
 - Never commit directly to `main`. Every change goes through a branch and a pull request.
 
 ## Pull request workflow
 
 - One branch per change, named `feat/<name>`, `fix/<name>`, `chore/<name>`.
-- Open a PR even for a one-line change. Titles and descriptions in English, same Gitmoji +
-  Conventional Commits convention.
+- Open a PR even for a one-line change. Titles and descriptions in English, same Conventional
+  Commits convention.
 - Use the `gh` CLI for every GitHub operation rather than the web UI.
 - `CONTRIBUTING.md`, `SECURITY.md` and the issue/PR templates are inherited from the org-level
   `techtown-fr/.github` repository — do not duplicate them here.

@@ -9,7 +9,7 @@ en prose dans un `AGENTS.md` et supposait qu'un agent la lise et l'applique corr
 
 | Fichier | Rôle |
 |---------|------|
-| `AGENTS.md.template` | Conventions permanentes : Gitmoji, workflow PR, commentaires, infra |
+| `AGENTS.md.template` | Conventions permanentes : Conventional Commits, workflow PR, commentaires, infra |
 | `CLAUDE.md.template` | Une ligne — `@AGENTS.md`, pour éviter deux sources de vérité |
 | `README.md.template` | Documentation projet |
 | `dependabot.yml` | 5 écosystèmes (npm, terraform, docker, pip, github-actions) à élaguer |

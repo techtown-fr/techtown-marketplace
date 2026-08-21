@@ -15,7 +15,7 @@ vivait en prose dans un `AGENTS.md`. Elle est ici, exécutable.
 
 | Fichier | Rôle |
 |---------|------|
-| `AGENTS.md` | Conventions permanentes (Gitmoji, PR, commentaires, infra) |
+| `AGENTS.md` | Conventions permanentes (Conventional Commits, PR, commentaires, infra) |
 | `CLAUDE.md` | Une ligne : `@AGENTS.md` — source unique, pas de duplication |
 | `README.md` | Documentation projet |
 | `.github/dependabot.yml` | **Élagué au stack réel** — voir étape 4 |
@@ -162,6 +162,6 @@ Branche + PR, jamais directement sur `main` :
 ```bash
 git checkout -b chore/bootstrap
 git add .
-git commit -m "🔧 chore: bootstrap TechTown conventions"
+git commit -m "chore: bootstrap TechTown conventions"
 gh pr create --fill
 ```

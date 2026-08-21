@@ -15,7 +15,8 @@ updates:
     labels:
       - "dependencies"
     commit-message:
-      prefix: "⬆️"
+      prefix: "chore"
+      include: "scope"
     groups:
       npm-packages:
         patterns:
@@ -33,7 +34,8 @@ updates:
       - "dependencies"
       - "terraform"
     commit-message:
-      prefix: "⬆️"
+      prefix: "chore"
+      include: "scope"
 
   # --- Docker — delete if there is no Dockerfile ---
   - package-ecosystem: "docker"
@@ -43,7 +45,8 @@ updates:
     labels:
       - "dependencies"
     commit-message:
-      prefix: "⬆️"
+      prefix: "chore"
+      include: "scope"
 
   # --- Python — delete if there is no requirements.txt or pyproject.toml ---
   - package-ecosystem: "pip"
@@ -53,7 +56,8 @@ updates:
     labels:
       - "dependencies"
     commit-message:
-      prefix: "⬆️"
+      prefix: "chore"
+      include: "scope"
     groups:
       pip-packages:
         patterns:
@@ -71,7 +75,8 @@ updates:
       - "dependencies"
       - "ci/cd"
     commit-message:
-      prefix: "⬆️"
+      prefix: "chore"
+      include: "scope"
     groups:
       github-actions:
         patterns:
