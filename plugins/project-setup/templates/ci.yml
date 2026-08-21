@@ -6,22 +6,36 @@ on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint-and-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 26
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
+      # --if-present keeps this workflow valid whatever subset of scripts the project defines.
       - name: Lint
-        run: npm run lint
+        run: npm run --if-present lint
+
+      - name: Format check
+        run: npm run --if-present format:check
+
+      - name: Test
+        run: npm run --if-present test
 
       - name: Build
-        run: npm run build
+        run: npm run --if-present build

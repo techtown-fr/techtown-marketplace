@@ -17,12 +17,13 @@ build/
 *.env
 
 # Terraform
+# .terraform.lock.hcl is intentionally NOT ignored: it pins provider hashes, so committing
+# it is what makes a plan reproducible across machines and CI.
 .terraform/
 *.tfstate
 *.tfstate.backup
 *.tfvars
 !*.tfvars.example
-.terraform.lock.hcl
 
 # OS
 .DS_Store

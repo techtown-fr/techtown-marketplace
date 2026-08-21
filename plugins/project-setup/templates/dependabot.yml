@@ -1,0 +1,81 @@
+# One block per ecosystem the project actually uses. Delete the others — an ecosystem
+# with no manifest produces a warning on every Dependabot run, not an error, so a stale
+# block stays invisible while it rots.
+#
+# Security updates are disabled org-wide (their PRs ignore open-pull-requests-limit and
+# most repos have no CI to validate them), so this file is the ONLY thing tracking
+# dependency versions here. A repo without it gets no dependency updates at all.
+version: 2
+updates:
+  # --- npm — delete if there is no package.json ---
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "⬆️"
+    groups:
+      npm-packages:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- Terraform — delete if there are no *.tf files ---
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "terraform"
+    commit-message:
+      prefix: "⬆️"
+
+  # --- Docker — delete if there is no Dockerfile ---
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "⬆️"
+
+  # --- Python — delete if there is no requirements.txt or pyproject.toml ---
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "⬆️"
+    groups:
+      pip-packages:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- GitHub Actions — keep in every repo that has .github/workflows ---
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "ci/cd"
+    commit-message:
+      prefix: "⬆️"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
