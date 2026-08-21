@@ -1,8 +1,21 @@
 {
   "name": "project-setup",
-  "version": "1.0.0",
-  "description": "Initialize a new TechTown project with CLAUDE.md, README, .gitignore, pre-commit hooks, and GitHub Actions CI skeleton. Use when starting a new TechTown repo, setting up project conventions, or initializing a repo.",
-  "keywords": ["setup", "init", "conventions", "claude-md", "pre-commit", "github-actions", "techtown", "scaffold"],
+  "version": "2.0.0",
+  "description": "Bootstrap a TechTown repository with its conventions — AGENTS.md, dependabot.yml trimmed to the real stack, CODEOWNERS, .gitignore, pre-commit hooks and CI. USE WHEN starting a new TechTown repo, init projet TechTown, nouveau projet, bootstrap repo, setup conventions TechTown, or adding Dependabot to a repo that has none.",
+  "keywords": [
+    "setup",
+    "init",
+    "bootstrap",
+    "conventions",
+    "agents-md",
+    "claude-md",
+    "dependabot",
+    "codeowners",
+    "pre-commit",
+    "github-actions",
+    "techtown",
+    "scaffold"
+  ],
   "author": {
     "name": "TechTown",
     "email": "team@techtown.fr"

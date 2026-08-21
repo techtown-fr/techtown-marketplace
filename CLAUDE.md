@@ -38,7 +38,7 @@ ls plugins/
 | `brand-guidelines` | Palette TechTown, typo, CSS vars, composants |
 | `firebase-deploy` | Firebase Hosting + WIF CI/CD |
 | `gcp-terraform` | Cloud Run + Cloud SQL + Secret Manager |
-| `project-setup` | Init projet TechTown (CLAUDE.md, pre-commit, CI) |
+| `project-setup` | Bootstrap repo TechTown (AGENTS.md, dependabot, CODEOWNERS, pre-commit, CI) |
 | `reporting` | Rapports HTML brandés TechTown |
 | `astro-firebase-app` | Scaffold Astro 5 + Firebase + Google SSO |
 

@@ -1,0 +1,61 @@
+# AGENTS.md
+
+Instructions for AI coding agents working in this repository.
+
+## Project overview
+
+<PROJECT_DESCRIPTION>
+
+**Repo:** `techtown-fr/<REPO_NAME>` · **Live:** <PRODUCTION_URL>
+
+| Layer | Tech |
+|-------|------|
+| <LAYER> | <TECH> |
+
+```bash
+<DEV_COMMAND>     # develop
+<BUILD_COMMAND>   # build
+<TEST_COMMAND>    # test
+```
+
+## Commit conventions
+
+- [Conventional Commits](https://www.conventionalcommits.org/) in English: `feat:`, `fix:`,
+  `refactor:`, `docs:`, `chore:`. No emoji prefix.
+- Never commit directly to `main`. Every change goes through a branch and a pull request.
+
+## Pull request workflow
+
+- One branch per change, named `feat/<name>`, `fix/<name>`, `chore/<name>`.
+- Open a PR even for a one-line change. Titles and descriptions in English, same Conventional
+  Commits convention.
+- Use the `gh` CLI for every GitHub operation rather than the web UI.
+- `CONTRIBUTING.md`, `SECURITY.md` and the issue/PR templates are inherited from the org-level
+  `techtown-fr/.github` repository — do not duplicate them here.
+
+## Code comments
+
+- Comment only when the **why** is non-obvious: a hidden constraint, a subtle invariant, a
+  workaround for a specific bug. Never explain what the code does.
+- One line where possible, three at the absolute most. A comment block longer than the code it
+  introduces is wrong.
+- Never narrate history in a comment (the bug that prompted it, what was tried before). That
+  belongs in the commit message or the PR description.
+
+## Infrastructure
+
+Every GCP resource that grants access — service accounts, IAM bindings, Workload Identity
+bindings, shared tfstate bucket access — is declared in `techtown-fr/techtown-infra`, never
+created by hand with `gcloud`.
+
+The Workload Identity pool is **scoped per repository**. A repo whose CI authenticates to GCP
+must be declared in `techtown-infra`'s `github_actions_repo`, otherwise the `auth` step fails
+with no principal match.
+
+## General guidelines
+
+- Prefer editing existing files over creating new ones. Keep the project as minimal as the task
+  requires — no framework or abstraction it does not need yet.
+- No new dependency without a clear need.
+- Verify changes actually work (run the app, the tests, a build) before calling a task done.
+  Static review is not verification.
