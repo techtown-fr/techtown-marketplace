@@ -1,6 +1,6 @@
 ---
 name: brand-guidelines
-description: TechTown brand and design system guidelines. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, generating marketing materials, or implementing visual design for TechTown projects. Covers colors, typography, spacing, components, dark mode, and logo usage.
+description: TechTown brand and design system guidelines — canonical source, including logo assets and detailed references. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, generating marketing materials, or implementing visual design for TechTown projects. Covers colors, typography, spacing, components, dark mode, and logo usage.
 allowed-tools: Read, Write, Edit, Bash
 ---
 
@@ -10,13 +10,26 @@ allowed-tools: Read, Write, Edit, Bash
 
 TechTown is a French tech consulting company specializing in Cloud & AI expertise, based in Nantes. The brand identity reflects innovation, technical excellence, and approachability.
 
+## Références détaillées
+
+Ce fichier couvre l'essentiel. Pour le détail, lire à la demande :
+
+| Fichier | Contenu |
+| ------- | ------- |
+| `references/css-variables.md` | Le jeu complet de variables CSS |
+| `references/components.md` | Recettes de composants prêtes à copier |
+| `assets/` | Logos SVG et PNG, texture de bruit, image Open Graph |
+
+Les templates `templates/style.css` et `templates/theme.ts` portent les mêmes tokens sous forme
+exploitable directement.
+
 ## Color Palette
 
 ### Primary Colors
 
 | Name             | Hex       | CSS Variable           | Usage                                     |
 | ---------------- | --------- | ---------------------- | ----------------------------------------- |
-| **Primary Blue** | `#1C62ED` | `--color-primary`      | Primary brand color, CTAs, links, accents |
+| **Primary Blue** | `#1C63ED` | `--color-primary`      | Primary brand color, CTAs, links, accents |
 | **Primary Dark** | `#1557D6` | `--color-primary-dark` | Hover states, emphasis                    |
 | **Accent Blue**  | `#3B7EFF` | `--color-accent`       | Secondary highlights                      |
 | **White**        | `#FFFFFF` | `--color-background`   | Backgrounds, text on dark                 |
@@ -40,6 +53,13 @@ TechTown is a French tech consulting company specializing in Cloud & AI expertis
 | **Background Dark** | `#1F2937` | `--color-background-alt-black` | Dark sections, footer      |
 | **Border**          | `#E5E7EB` | `--color-border`               | Borders, dividers          |
 
+### Gradient Colors
+
+| Name               | Hex       | CSS Variable                   | Usage            |
+| ------------------ | --------- | ------------------------------ | ---------------- |
+| **Gradient Start** | `#F8FAFC` | `--color-gradient-light-start` | Subtle gradients |
+| **Gradient End**   | `#E2E8F0` | `--color-gradient-light-end`   | Subtle gradients |
+
 ### Dark Mode Palette
 
 | Token | Light | Dark |
@@ -49,7 +69,7 @@ TechTown is a French tech consulting company specializing in Cloud & AI expertis
 | `--color-text` | `#1F2937` | `#F1F5F9` |
 | `--color-text-light` | `#6B7280` | `#94A3B8` |
 | `--color-border` | `#E5E7EB` | `#334155` |
-| `--color-primary` | `#1C62ED` | `#3B7EFF` |
+| `--color-primary` | `#1C63ED` | `#3B7EFF` |
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -151,6 +171,45 @@ font-family: "Poppins", sans-serif;
 .card:hover { transform: translateY(-4px); }
 ```
 
+### Icon Circles
+
+```css
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--texture-noise-light) var(--color-primary);
+  color: white;
+}
+
+.icon--sm { width: 60px; height: 60px; }
+.icon--md { width: 100px; height: 100px; }
+.icon--lg { width: 100px; height: 100px; }
+```
+
+### Sections
+
+```css
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-text);
+}
+
+/* Section sur fond de marque */
+.services {
+  background: var(--texture-noise-light) var(--color-primary);
+  color: var(--color-text-white);
+}
+```
+
 ## Astro Components
 
 ### Bouton primaire Astro
@@ -221,7 +280,7 @@ Dans `style.css` du projet Slidev :
 
 ```css
 :root {
-  --slidev-theme-primary: #1C62ED;
+  --slidev-theme-primary: #1C63ED;
   --slidev-theme-primary-dark: #1557D6;
   --slidev-font-family: 'Poppins', sans-serif;
 }
@@ -270,6 +329,6 @@ background: var(--texture-noise-light) var(--color-primary);
 
 1. Toujours utiliser les variables CSS, jamais de valeurs en dur
 2. Contraste WCAG AA minimum
-3. `#1C62ED` réservé aux éléments interactifs et à la marque
+3. `#1C63ED` réservé aux éléments interactifs et à la marque
 4. Transitions `0.2–0.3s ease` sur les hover states
 5. Dark mode via `prefers-color-scheme` en priorité sur le toggle manuel

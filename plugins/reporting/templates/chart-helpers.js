@@ -1,5 +1,5 @@
 // Helpers Chart.js TechTown
-const TECHTOWN_BLUE = '#1C62ED';
+const TECHTOWN_BLUE = '#1C63ED';
 const TECHTOWN_ACCENT = '#3B7EFF';
 const TECHTOWN_LIGHT = 'rgba(28, 98, 237, 0.15)';
 

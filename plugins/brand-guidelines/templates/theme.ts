@@ -1,6 +1,6 @@
 // TechTown Design Tokens — TypeScript
 export const colors = {
-  primary: '#1C62ED',
+  primary: '#1C63ED',
   primaryDark: '#1557D6',
   accent: '#3B7EFF',
   background: '#FFFFFF',
