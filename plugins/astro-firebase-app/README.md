@@ -1,6 +1,6 @@
 # astro-firebase-app
 
-Scaffold une app Astro 5 + Firebase Hosting + Google SSO `@techtown.fr`.
+Scaffold une app Astro 7 + Firebase Hosting + Google SSO `@techtown.fr`.
 
 ## Templates fournis
 

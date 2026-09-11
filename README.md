@@ -12,7 +12,7 @@ Regroupe les plugins pour les workflows récurrents de l'équipe.
 | `gcp-terraform` | Cloud Run + Cloud SQL + Secret Manager | Infrastructure GCP |
 | `project-setup` | CLAUDE.md, README, pre-commit, GitHub Actions | Init projet |
 | `reporting` | Rapports HTML brandés TechTown (Chart.js, PDF) | Livrables clients |
-| `astro-firebase-app` | Scaffold Astro 5 + Firebase + Google SSO | Nouvelles apps |
+| `astro-firebase-app` | Scaffold Astro 7 + Firebase + Google SSO | Nouvelles apps |
 
 ## Installation
 

@@ -40,7 +40,7 @@ ls plugins/
 | `gcp-terraform` | Cloud Run + Cloud SQL + Secret Manager |
 | `project-setup` | Bootstrap repo TechTown (AGENTS.md, dependabot, CODEOWNERS, pre-commit, CI) |
 | `reporting` | Rapports HTML brandés TechTown |
-| `astro-firebase-app` | Scaffold Astro 5 + Firebase + Google SSO |
+| `astro-firebase-app` | Scaffold Astro 7 + Firebase + Google SSO |
 
 ## Ajouter un plugin
 
