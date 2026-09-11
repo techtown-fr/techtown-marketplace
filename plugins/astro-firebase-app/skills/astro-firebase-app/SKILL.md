@@ -1,16 +1,16 @@
 ---
 name: astro-firebase-app
-description: Scaffold a TechTown Astro 5 app with Firebase Hosting and Google SSO restricted to @techtown.fr. USE WHEN creating a new internal TechTown web application, nouvelle app Astro TechTown, scaffold application, Astro Firebase setup, nouvelle app interne.
+description: Scaffold a TechTown Astro 7 app with Firebase Hosting and Google SSO restricted to @techtown.fr. USE WHEN creating a new internal TechTown web application, nouvelle app Astro TechTown, scaffold application, Astro Firebase setup, nouvelle app interne.
 allowed-tools: Read, Write, Edit, Bash, AskUserQuestion
 ---
 
 # Astro Firebase App — TechTown
 
-Scaffold une application Astro 5 avec Firebase Hosting et Google SSO restreint à `@techtown.fr`.
+Scaffold une application Astro 7 avec Firebase Hosting et Google SSO restreint à `@techtown.fr`.
 
 ## Prérequis
 
-- Node.js 22+
+- Node.js 22.12+
 - Firebase CLI (`npm install -g firebase-tools`)
 - Projet Firebase créé dans l'org TechTown
 
