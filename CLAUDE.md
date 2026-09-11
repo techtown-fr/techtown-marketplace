@@ -35,7 +35,7 @@ ls plugins/
 
 | Plugin | Rôle |
 |--------|------|
-| `brand-guidelines` | Palette TechTown, typo, CSS vars, composants |
+| `brand-guidelines` | **Source canonique** — palette, typo, CSS vars, composants, assets logo |
 | `firebase-deploy` | Firebase Hosting + WIF CI/CD |
 | `gcp-terraform` | Cloud Run + Cloud SQL + Secret Manager |
 | `project-setup` | Bootstrap repo TechTown (AGENTS.md, dependabot, CODEOWNERS, pre-commit, CI) |
