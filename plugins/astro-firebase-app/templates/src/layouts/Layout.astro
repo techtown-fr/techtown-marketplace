@@ -1,4 +1,6 @@
 ---
+import { Font } from "astro:assets";
+
 interface Props {
   title?: string;
   description?: string;
@@ -20,6 +22,7 @@ const siteUrl = Astro.url.href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
@@ -39,25 +42,13 @@ const siteUrl = Astro.url.href;
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+    <Font
+      cssVariable="--font-poppins"
+      preload={[
+        { weight: 400, style: "normal", subset: "latin" },
+        { weight: 600, style: "normal", subset: "latin" },
+      ]}
     />
-
-    <!-- Theme initialization (prevent FOUC) -->
-    <script is:inline>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        const systemPrefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        const theme = savedTheme || (systemPrefersDark ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
   </head>
   <body data-require-auth={requireAuth ? "true" : "false"}>
     <slot />
@@ -88,18 +79,58 @@ const siteUrl = Astro.url.href;
     --color-blue: #1c62ed;
     --color-primary: #1c62ed;
     --color-text-white: #ffffff;
-    --color-gray-light: #f5f5f5;
-    --color-gray-medium: #e0e0e0;
-    --color-gray-dark: #666666;
 
-    /* Semantic color tokens */
-    --color-bg: var(--color-white);
-    --color-bg-secondary: var(--color-gray-light);
-    --color-text: var(--color-black);
-    --color-text-muted: var(--color-gray-dark);
-    --color-border: var(--color-gray-medium);
-    --color-card-bg: var(--color-white);
-    --color-hover-bg: var(--color-gray-light);
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #0f0f0f;
+    --color-bg-secondary-light: #f5f5f5;
+    --color-bg-secondary-dark: #1a1a1a;
+    --color-text-light: #000000;
+    --color-text-dark: #f5f5f5;
+    --color-text-muted-light: #666666;
+    --color-text-muted-dark: #a0a0a0;
+    --color-border-light: #e0e0e0;
+    --color-border-dark: #2a2a2a;
+    --color-card-bg-light: #ffffff;
+    --color-card-bg-dark: #1a1a1a;
+    --color-hover-bg-light: #f5f5f5;
+    --color-hover-bg-dark: #252525;
+
+    --color-bg: var(--color-bg-light);
+    --color-bg-secondary: var(--color-bg-secondary-light);
+    --color-text: var(--color-text-light);
+    --color-text-muted: var(--color-text-muted-light);
+    --color-border: var(--color-border-light);
+    --color-card-bg: var(--color-card-bg-light);
+    --color-hover-bg: var(--color-hover-bg-light);
+
+    @media (prefers-color-scheme: dark) {
+      --color-bg: var(--color-bg-dark);
+      --color-bg-secondary: var(--color-bg-secondary-dark);
+      --color-text: var(--color-text-dark);
+      --color-text-muted: var(--color-text-muted-dark);
+      --color-border: var(--color-border-dark);
+      --color-card-bg: var(--color-card-bg-dark);
+      --color-hover-bg: var(--color-hover-bg-dark);
+    }
+
+    @supports (color: light-dark(white, black)) {
+      --color-bg: light-dark(var(--color-bg-light), var(--color-bg-dark));
+      --color-bg-secondary: light-dark(
+        var(--color-bg-secondary-light),
+        var(--color-bg-secondary-dark)
+      );
+      --color-text: light-dark(var(--color-text-light), var(--color-text-dark));
+      --color-text-muted: light-dark(
+        var(--color-text-muted-light),
+        var(--color-text-muted-dark)
+      );
+      --color-border: light-dark(var(--color-border-light), var(--color-border-dark));
+      --color-card-bg: light-dark(var(--color-card-bg-light), var(--color-card-bg-dark));
+      --color-hover-bg: light-dark(var(--color-hover-bg-light), var(--color-hover-bg-dark));
+    }
+
+    color-scheme: light dark;
+    accent-color: var(--color-primary);
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -108,23 +139,6 @@ const siteUrl = Astro.url.href;
     --spacing-xl: 3rem;
 
     --border-radius: 8px;
-    --transition: all 0.2s ease;
-  }
-
-  /* Dark mode */
-  [data-theme="dark"] {
-    --color-bg: #0f0f0f;
-    --color-bg-secondary: #1a1a1a;
-    --color-text: #f5f5f5;
-    --color-text-muted: #a0a0a0;
-    --color-border: #2a2a2a;
-    --color-card-bg: #1a1a1a;
-    --color-hover-bg: #252525;
-    --color-gray-light: #1a1a1a;
-    --color-gray-medium: #2a2a2a;
-    --color-gray-dark: #a0a0a0;
-    --color-white: #0f0f0f;
-    --color-black: #f5f5f5;
   }
 
   *,
@@ -136,22 +150,12 @@ const siteUrl = Astro.url.href;
   }
 
   body {
-    font-family:
-      "Poppins",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      "Helvetica Neue",
-      Arial,
-      sans-serif;
+    font-family: var(--font-poppins), sans-serif;
+    font-size-adjust: from-font;
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
     min-height: 100vh;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
   }
 
   a {
