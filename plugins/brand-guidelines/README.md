@@ -1,25 +1,26 @@
 # brand-guidelines
 
-Palette, typographie, composants et tokens de la marque TechTown.
+Charte et design system TechTown. **Source canonique** : toute modification de la marque part
+d'ici.
 
-## Activation
+Le repo `techtown-fr/skills` en est l'export cross-agent, installable via
+`npx skills add techtown-fr/skills` pour les agents que le marketplace ne sert pas (GitHub
+Copilot notamment).
 
-S'active automatiquement quand tu travailles sur un composant UI, du styling ou du marketing TechTown.
+## Contenu
 
-## Templates fournis
+| Chemin | Contenu |
+|--------|---------|
+| `skills/brand-guidelines/SKILL.md` | Palette, typographie, espacements, composants, dark mode, Astro/Vue/Slidev |
+| `references/css-variables.md` | Jeu complet des variables CSS |
+| `references/components.md` | Recettes de composants prêtes à copier |
+| `assets/` | Logos SVG et PNG, texture de bruit, image Open Graph |
+| `templates/style.css` | Tokens en CSS, light et dark |
+| `templates/theme.ts` | Mêmes tokens en TypeScript |
 
-| Fichier | Usage |
-|---------|-------|
-| `templates/style.css` | Variables CSS prêtes à copier dans ton projet |
-| `templates/theme.ts` | Tokens TypeScript pour usage programmatique |
+## Bleu primaire
 
-## Contenu du skill
+`#1C63ED` — la valeur des logos, exportés d'Illustrator, qui font référence.
 
-- Palette complète (primaire, texte, background, dark mode)
-- Typographie Poppins + font weights + sizes
-- Spacing system
-- Composants CSS (boutons, cards, grille)
-- Exemples Astro components
-- Exemples Vue 3 SFC
-- Guide Slidev theming TechTown
-- Règles logo + textures
+Les fichiers du dépôt ont porté `#1C62ED` pendant un temps, un écart d'un chiffre sur le canal
+vert. Invisible à l'œil, mais deux valeurs documentées pour un même token de marque.

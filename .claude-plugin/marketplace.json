@@ -8,8 +8,8 @@
     {
       "name": "brand-guidelines",
       "source": "./plugins/brand-guidelines",
-      "description": "TechTown brand and design system guidelines. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, or implementing visual design for TechTown projects.",
-      "version": "1.0.0",
+      "description": "TechTown brand and design system guidelines — canonical source, including logo assets and detailed references. Use when creating UI components, styling pages, Astro/Vue components, Slidev theming, generating marketing materials, or implementing visual design for TechTown projects. Covers colors, typography, spacing, components, dark mode, and logo usage.",
+      "version": "2.0.0",
       "keywords": [
         "brand",
         "design",

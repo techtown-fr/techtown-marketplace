@@ -101,7 +101,7 @@ function renderHtml(mkt: Marketplace): string {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --color-primary: #1C62ED;
+      --color-primary: #1C63ED;
       --color-primary-dark: #1557D6;
       --color-accent: #3B7EFF;
       --color-bg: #FFFFFF;
